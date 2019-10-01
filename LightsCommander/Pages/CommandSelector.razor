@@ -1,0 +1,50 @@
+﻿
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Select Command
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            @foreach (var command in commands)
+            {
+                <button class="dropdown-item" type="button">@command</button>
+            }
+        </div>
+    </div>
+
+
+
+
+@code {
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //commands = new List<string>();
+
+
+        //if(commands.Count == 0)
+        //{
+        //    for(int i=0;i<5;i++)
+        //    {
+        //        commands.Add("Command-" + i + 1);
+        //    }
+        //}
+    }
+
+    List<string> commands;
+
+    protected override async Task OnInitializedAsync()
+    {
+        commands = new List<string>();
+
+
+        if (commands.Count == 0)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                commands.Add("Command-" + i + 1);
+            }
+        }
+
+    }
+
+}
