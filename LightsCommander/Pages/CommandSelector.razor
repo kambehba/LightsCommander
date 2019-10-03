@@ -6,9 +6,18 @@
         <div class="dropdown-menu dropdown-menu-right">
             @foreach (var command in commands)
             {
+                <p>fds</p>
                 <button class="dropdown-item" type="button">@command</button>
             }
         </div>
+    </div>
+
+    <div>
+        @foreach (var command in commands)
+        {
+            <p>fds</p>
+            <button class="dropdown-item" type="button">@command</button>
+        }
     </div>
 
 
@@ -16,35 +25,68 @@
 
 @code {
 
-    protected void Page_Load(object sender, EventArgs e)
+
+
+
+
+    //    protected override void OnLoad(EventArgs e)
+    //{
+    //    base.OnLoad(e);
+    //    if (_text == null)
+    //        _text = "Here is some default text.";
+    //}
+
+    protected void Page_Init(object sender, EventArgs e)
     {
-        //commands = new List<string>();
+        commands = new List<string>();
 
 
-        //if(commands.Count == 0)
+        //if (commands.Count == 0)
         //{
-        //    for(int i=0;i<5;i++)
+        //    for (int i = 0; i < 5; i++)
         //    {
         //        commands.Add("Command-" + i + 1);
         //    }
         //}
     }
 
-    List<string> commands;
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    commands = new List<string>();
 
-    protected override async Task OnInitializedAsync()
+
+    //    if (commands.Count == 0)
+    //    {
+    //        for (int i = 0; i < 5; i++)
+    //        {
+    //            commands.Add("Command-" + i + 1);
+    //        }
+    //    }
+
+    //}
+
+
+    private List<string> commands;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    commands = await GetCommands();
+    //}
+
+    protected override void OnInitialized()
     {
         commands = new List<string>();
+         for (int i = 0; i < 5; i++)
+         {
+            commands.Add("Command-" + i + 1);
+         }
 
+    }
 
-        if (commands.Count == 0)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                commands.Add("Command-" + i + 1);
-            }
-        }
-
+    List<string> GetCommands()
+    {
+        var h = new List<string>();
+        return h;
     }
 
 }
