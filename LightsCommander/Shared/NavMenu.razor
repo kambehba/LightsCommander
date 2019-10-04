@@ -7,52 +7,38 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
+
         <li class="nav-item px-3">
-            <LightsCommander.Pages.CommandSelector></LightsCommander.Pages.CommandSelector>
-
-            @*<div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>*@
-
-
-            @*<NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
-            Command-1
-            <button @onclick="Dothis"> </button>
-        </NavLink>*@
+            <NavLink class="nav-link" href="c1">
+                <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> Left to Right
+            </NavLink>
         </li>
-      
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="c2">
+                <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> Right to Left
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="c3">
+                <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> All Flash
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="c4">
+                <span class="oi oi-arrow-circle-right" aria-hidden="true"></span> Swing
+            </NavLink>
+        </li>
+
     </ul>
 </div>
 
 @code {
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    commands = new List<string>();
-
-
-    //    if(commands.Count == 0)
-    //    {
-    //        for(int i=0;i<5;i++)
-    //        {
-    //            commands.Add("Command-" + i + 1);
-    //        }
-    //    }
-
-    //}
-
-
-    /// List<string> commands;
-
-
-    bool collapseNavMenu = true;
+  
+    bool collapseNavMenu = false;
     string test = "Select Light Command";
     string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -61,14 +47,5 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
-    void Dothis()
-    {
-        //  currentCount++;
-    }
-
-    //void  UpdateDropDown()
-    //{
-    //    test = commands[0];
-
-    //}
+   
 }
