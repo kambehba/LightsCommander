@@ -197,4 +197,52 @@ app {
     .dropdown:hover .dropbtn {
         background-color: #3e8e41;
     }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 200px 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px 200px;
+        grid-template-areas: 
+            ". g1 g1 ."
+            ". g2 g3 g4"
+            "g5 g6 g7 g8"
+            ". . . ."
+            
+    }
+
+    .g0 {
+        grid-area: g0;
+    }
+
+    .g1{
+        grid-area:g1;
+    }
+
+    .g2 {
+        grid-area: g2;
+    }
+
+    .g3 {
+        grid-area: g3;
+    }
+
+    .g4 {
+        grid-area: g4;
+    }
+
+    .g5 {
+        grid-area: g5;
+    }
+
+    .g6 {
+        grid-area: g6;
+    }
+
+    .g7 {
+        grid-area: g7;
+    }
+
+    .g8 {
+        grid-area: g8;
+    }
 }
