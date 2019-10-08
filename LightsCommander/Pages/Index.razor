@@ -1,17 +1,20 @@
 ﻿@page "/"
 @using System.Threading;
+@inject IJSRuntime JsRuntime;
+
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 <div class="grid">
 
     <div class="g1">Welcome to Kam's Lights Commander</div>
     <div class="g2">Select Pattern: </div>
     <div class="g3">
-        <select onchange=@OnCommandSelected()>
+        <select @bind="SelectedCommand">
             @foreach (var command in commands)
             {
-                <option value="volvo">@command</option>
+                <option value="@command">@command</option>
             }
         </select>
     </div>
@@ -21,29 +24,30 @@
     </div>
 
     <div class="g5">
-       
+
         <svg height="100" width="100">
-            <circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="@_lightStatus_1" />
+            <circle id="d1" class="@Lights_css_1" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
     <div class="g6">
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="@_lightStatus_2" />
-            </svg>
-        </div>
+        <svg height="100" width="100">
+            <circle id="d2" class="@Lights_css_2" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        </svg>
+    </div>
 
-        <div class="g7">
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="@_lightStatus_3" />
-            </svg>
-        </div>
+    <div class="g7">
+        <svg height="100" width="100">
+            <circle id="d3" class="@Lights_css_3" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        </svg>
+    </div>
 
-        <div class="g8">
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="@_lightStatus_4" />
-            </svg>
-        </div>
+    <div class="g8">
+        <svg height="100" width="100">
+            <circle id="d4" class="@Lights_css_4" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        </svg>
+    </div>
+
 
 
 </div>
@@ -52,31 +56,57 @@
 
 
 @code {
-
+    private string SelectedCommand = string.Empty;
     private List<string> commands;
     private string _lightStatus_1;
     private string _lightStatus_2;
     private string _lightStatus_3;
     private string _lightStatus_4;
+    private Timer timer;
+    private enum CommandTypes { All_ON, ALL_OFF, LEFT_RIGHT, RIGHT_LEFT, ALL_FLASH }
+    private string qq;
+    private string Lights_css_1;
+    private string Lights_css_2;
+    private string Lights_css_3;
+    private string Lights_css_4;
 
     private int CurrentCount = 1000;
+
+    private async void dothis()
+    {
+        var text =
+            await JsRuntime.InvokeAsync<string>("myFunction");
+
+      
+
+        StateHasChanged();
+          this.InvokeAsync(StateHasChanged);
+    }
 
     protected override void OnInitialized()
     {
         commands = new List<string>();
         commands.Add(string.Empty);
-        commands.Add("Left To Right");
-        commands.Add("Right to Left");
+        commands.Add(CommandTypes.ALL_OFF.ToString());
+        commands.Add(CommandTypes.All_ON.ToString());
+        commands.Add(CommandTypes.LEFT_RIGHT.ToString());
+        commands.Add(CommandTypes.RIGHT_LEFT.ToString());
+        commands.Add(CommandTypes.ALL_FLASH.ToString());
+
 
         _lightStatus_1 = "white";
         _lightStatus_2 = "white";
         _lightStatus_3 = "white";
         _lightStatus_4 = "white";
 
+        Lights_css_1 = " lightsAllOff";
+        Lights_css_2 = " lightsAllOff";
+        Lights_css_3 = " lightsAllOff";
+        Lights_css_4 = " lightsAllOff";
     }
 
 
-    void OnCommandSelected(ChangeEventArgs  e)
+    void OnCommandSelected(ChangeEventArgs e)
     {
         var selectedString = e.Value.ToString();
         Console.WriteLine("It is definitely: " + selectedString);
@@ -84,7 +114,19 @@
 
     void SendLightCommand()
     {
-        var timer = new Timer(TimeCallBack, null, 500, 800);
+       
+        if (SelectedCommand.Equals(CommandTypes.All_ON.ToString())) { Lights_css_1 = "lightsAllOn"; Lights_css_2 = "lightsAllOn"; Lights_css_3 = "lightsAllOn"; Lights_css_4 = "lightsAllOn"; }
+        if (SelectedCommand.Equals(CommandTypes.ALL_OFF.ToString())) { Lights_css_1 = "lightsAllOff"; Lights_css_2 = "lightsAllOff"; Lights_css_3 = "lightsAllOff"; Lights_css_4 = "lightsAllOff"; }
+        if (SelectedCommand.Equals(CommandTypes.ALL_FLASH.ToString())) { Lights_css_1 = "lightsAllFlash";Lights_css_2 = "lightsAllFlash";Lights_css_3 = "lightsAllFlash";Lights_css_4 = "lightsAllFlash"; }
+        if (SelectedCommand.Equals(CommandTypes.LEFT_RIGHT.ToString()))
+        {
+            Lights_css_1 = "lighthsOff";
+            Lights_css_2 = "lighthsOff";
+            Lights_css_3 = "lighthsOff";
+            Lights_css_4 = "lighthsOff";
+
+            dothis();
+        }
 
     }
 
@@ -96,16 +138,21 @@
         {
             CurrentCount--;
             dothis2();
-            // Note:following line is necessary because Blazor would not recognize the state change hence not refresh the UI  
+            // Note:following line is necessary because Blazor would not recognize the state change hence not refresh the UI
             this.InvokeAsync(StateHasChanged);
         }
     }
 
     void dothis2()
     {
-        if ( _lightStatus_1.Equals("white")) { _lightStatus_1 = "red"; return; }
+        if (_lightStatus_1.Equals("white")) { _lightStatus_1 = "red"; return; }
         if (_lightStatus_1.Equals("red")) { _lightStatus_1 = "white"; return; }
 
+    }
+
+    void All_ON()
+    {
+        _lightStatus_4 = "red";
     }
 
 
