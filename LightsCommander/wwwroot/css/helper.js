@@ -14,8 +14,7 @@ function RunLeftRight() {
     var t4 = 4000;
 
     for (var i = 0; i < 5; i++) {
-        if (isStop) break;
-
+       
         to1 = setTimeout(function () {
 
             document.getElementById("d1").style.fill = "red"; document.getElementById("d2").style.fill = "white"; document.getElementById("d3").style.fill = "white"; document.getElementById("d4").style.fill = "white";
@@ -53,9 +52,6 @@ function RunRightLeft() {
     var t3 = 3000;
     var t4 = 4000;
 
-   
-  
-   
     for (var i = 0; i < 5; i++) {
         if (isStop) break;
         to1 = setTimeout(function () {

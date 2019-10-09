@@ -23,26 +23,28 @@
         <button @onclick="SendLightCommand">Send</button>
     </div>
 
-    <div class="g5">
+    
+
+    <div class="g6">
 
         <svg height="100" width="100">
             <circle id="d1" class="@Lights_css_1" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
-    <div class="g6">
+    <div class="g7">
         <svg height="100" width="100">
             <circle id="d2" class="@Lights_css_2" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
-    <div class="g7">
+    <div class="g8">
         <svg height="100" width="100">
             <circle id="d3" class="@Lights_css_3" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
-    <div class="g8">
+    <div class="g9">
         <svg height="100" width="100">
             <circle id="d4" class="@Lights_css_4" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
         </svg>
@@ -56,6 +58,7 @@
 
 
 @code {
+
     private string SelectedCommand = string.Empty;
     private List<string> commands;
 
@@ -72,6 +75,7 @@
 
     protected override void OnInitialized()
     {
+
 
 
         SetCommandDropDownOptions();
@@ -103,21 +107,42 @@
 
     }
 
+    
     private void ALLOff()
     {
         Lights_css_1 = "lighthsOff";
         Lights_css_2 = "lighthsOff";
         Lights_css_3 = "lighthsOff";
         Lights_css_4 = "lighthsOff";
+        
+    }
+
+    private void d2()
+    {
+
+        Lights_css_1 = "light1On";
+        Lights_css_2 = "light2On";
+        Lights_css_3 = "light3On";
+        Lights_css_4 = "light4On";
+    }
+
+    private void d3()
+    {
+        Lights_css_1 = "lightsAllFlash";
+        Lights_css_2 = "lightsAllFlash";
+        Lights_css_3 = "lightsAllFlash";
+        Lights_css_4 = "lightsAllFlash";
     }
 
 
     private async void RunLeftRight()
     {
-        //var result2 =  await JsRuntime.InvokeAsync<string>("dothis");
 
         var result =  await JsRuntime.InvokeAsync<string>("RunLeftRight");
-        StateHasChanged();
+        ALLOff();
+        // StateHasChanged();
+        var result2 =  await JsRuntime.InvokeAsync<string>("RunLeftRight");
+        // StateHasChanged();
     }
     CancellationTokenSource hh;
     private async void RunRightLeft()
@@ -126,22 +151,9 @@
         {
             var result = await JsRuntime.InvokeAsync<string>("RunRightLeft", hh);
 
-            StateHasChanged();
-           
+            // StateHasChanged();
+
         }
-
-
-
-
-    }
-
-    private void dw()
-    {
-        //hh.Cancel();
-        // var result2 =  await JsRuntime.InvokeAsync<string>("dothis");
-
-
-        StateHasChanged();
     }
 
 

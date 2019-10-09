@@ -200,29 +200,36 @@ app {
 
     .grid {
         display: grid;
+        background-color:aqua;
         grid-template-columns: 200px 200px 200px 200px;
-        grid-template-rows: 200px 200px 200px 200px;
-        grid-template-areas: ". g1 g1 ." ". g2 g3 g4" "g5 g6 g7 g8" ". . . ."
+        grid-template-rows: 100px 100px 100px 100px;
+        grid-template-areas: ". g1 g1 ." "g2 g3 g4 g5" "g6 g7 g8 g9" ". . . ."
+
     }
 
     .g0 {
         grid-area: g0;
+      
     }
 
     .g1 {
         grid-area: g1;
+      
     }
 
     .g2 {
         grid-area: g2;
+      
     }
 
     .g3 {
         grid-area: g3;
+      
     }
 
     .g4 {
         grid-area: g4;
+      
     }
 
     .g5 {
@@ -239,6 +246,10 @@ app {
 
     .g8 {
         grid-area: g8;
+    }
+
+    .g9 {
+        grid-area: g9;
     }
 
     .lighthsOff{
@@ -280,6 +291,8 @@ app {
         animation-iteration-count: 3;
         animation-fill-mode: forwards;
         animation-play-state: running;
+        animation-timing-function: ease-in;
+       
     }
 
     .light2On {
@@ -313,6 +326,8 @@ app {
         animation-play-state:running;
      
     }
+
+   
 
     @keyframes a1 {
         0% {
