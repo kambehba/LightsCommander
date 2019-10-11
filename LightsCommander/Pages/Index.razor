@@ -64,7 +64,7 @@
 
     private Timer timer;
     private enum CommandTypes { All_ON, ALL_OFF, LEFT_RIGHT, RIGHT_LEFT, ALL_FLASH }
-    private string qq;
+   
     private string Lights_css_1;
     private string Lights_css_2;
     private string Lights_css_3;
@@ -75,9 +75,6 @@
 
     protected override void OnInitialized()
     {
-
-
-
         SetCommandDropDownOptions();
 
         ALLOff();
@@ -107,31 +104,14 @@
 
     }
 
-    
+
     private void ALLOff()
     {
         Lights_css_1 = "lighthsOff";
         Lights_css_2 = "lighthsOff";
         Lights_css_3 = "lighthsOff";
         Lights_css_4 = "lighthsOff";
-        
-    }
 
-    private void d2()
-    {
-
-        Lights_css_1 = "light1On";
-        Lights_css_2 = "light2On";
-        Lights_css_3 = "light3On";
-        Lights_css_4 = "light4On";
-    }
-
-    private void d3()
-    {
-        Lights_css_1 = "lightsAllFlash";
-        Lights_css_2 = "lightsAllFlash";
-        Lights_css_3 = "lightsAllFlash";
-        Lights_css_4 = "lightsAllFlash";
     }
 
 
@@ -139,21 +119,13 @@
     {
 
         var result =  await JsRuntime.InvokeAsync<string>("RunLeftRight");
-        ALLOff();
-        // StateHasChanged();
-        var result2 =  await JsRuntime.InvokeAsync<string>("RunLeftRight");
-        // StateHasChanged();
+       
     }
-    CancellationTokenSource hh;
+  
     private async void RunRightLeft()
     {
-        using (hh = new CancellationTokenSource())
-        {
-            var result = await JsRuntime.InvokeAsync<string>("RunRightLeft", hh);
-
-            // StateHasChanged();
-
-        }
+        var result = await JsRuntime.InvokeAsync<string>("RunRightLeft");
+     
     }
 
 

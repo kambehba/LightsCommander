@@ -12,9 +12,7 @@ function RunLeftRight() {
     var t2 = 2000;
     var t3 = 3000;
     var t4 = 4000;
-
-    for (var i = 0; i < 5; i++) {
-       
+    
         to1 = setTimeout(function () {
 
             document.getElementById("d1").style.fill = "red"; document.getElementById("d2").style.fill = "white"; document.getElementById("d3").style.fill = "white"; document.getElementById("d4").style.fill = "white";
@@ -40,8 +38,6 @@ function RunLeftRight() {
         t2 += 4000;
         t3 += 4000;
         t4 += 4000;
-
-    }
     return "sucess";
 }
 
@@ -51,9 +47,7 @@ function RunRightLeft() {
     var t2 = 2000;
     var t3 = 3000;
     var t4 = 4000;
-
-    for (var i = 0; i < 5; i++) {
-        if (isStop) break;
+     
         to1 = setTimeout(function () {
 
             document.getElementById("d4").style.fill = "red"; document.getElementById("d3").style.fill = "white"; document.getElementById("d2").style.fill = "white"; document.getElementById("d1").style.fill = "white";
@@ -80,7 +74,6 @@ function RunRightLeft() {
         t3 += 4000;
         t4 += 4000;
 
-    }
     return "sucess";
 }
 
