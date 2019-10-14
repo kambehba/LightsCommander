@@ -1,0 +1,17 @@
+{
+  "name": "Lights Commander",
+  "short_name": "L Commander",
+  "description": "Make Chrismase Lights Dance",
+  "icons": [
+    {
+      "src": "/img/icon-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icon-512x512.png",
+      "sizes": "512x512"
+    }
+  ],
+  "display": "standalone",
+  "start_url": "https://lightscommander2.azurewebsites.net/"
+}

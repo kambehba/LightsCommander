@@ -148,233 +148,224 @@ app {
         display: block;
     }
 
-    /* Dropdown Button */
-    .dropbtn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        height: 60px;
     }
 
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 60px;
+}
 
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 190px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        font-size: x-large;
-    }
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: x-large;
+}
 
-            /* Change color of dropdown links on hover */
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
         display: block;
     }
 
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown:hover .dropbtn {
-        background-color: #3e8e41;
-    }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
-    .b1{
-        background-color:red;
-        width:250px;
-    }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-    .grid {
-        display: grid;
-        background-color:aqua;
-        grid-template-columns: 200px 200px 200px 200px;
-        grid-template-rows: 100px 100px 100px 100px;
-        grid-template-areas: ". g1 g1 ." "g2 g3 g4 g5" "g6 g7 g8 g9" ". . . ."
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
 
-    }
+.b1 {
+    background-color: red;
+    width: 250px;
+}
 
-    .g0 {
-        grid-area: g0;
-      
-    }
-
-    .g1 {
-        grid-area: g1;
-      
-    }
-
-    .g2 {
-        grid-area: g2;
-      
-    }
-
-    .g3 {
-        grid-area: g3;
-      
-    }
-
-    .g4 {
-        grid-area: g4;
-      
-    }
-
-    .g5 {
-        grid-area: g5;
-    }
-
-    .g6 {
-        grid-area: g6;
-    }
-
-    .g7 {
-        grid-area: g7;
-    }
-
-    .g8 {
-        grid-area: g8;
-    }
-
-    .g9 {
-        grid-area: g9;
-    }
-
-    .lighthsOff{
-        fill:white;
-    }
-
-    .lightsAllOff {
-        animation-name: a2;
-        animation-duration: 1.5s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-
-    .lightsAllOn {
-        animation-name: a1;
-        animation-duration: 1.5s;
-        animation-iteration-count: 1;
-        animation-fill-mode:forwards;
-    }
-
-    .lightsAllFlash {
-        animation-name: a3;
-        animation-duration: 1.5s;
-        animation-iteration-count: 15;
-        animation-fill-mode: forwards;
-    }
-
-    .lightsLeftRight {
-        animation-name: a1,a2;
-        animation-duration: 1.5s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-
-    .light1On {
-        fill: white;
-        animation-name: a4;
-        animation-duration: 1s;
-        animation-iteration-count: 3;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        animation-timing-function: ease-in;
-       
-    }
-
-    .light2On {
-        fill: white;
-        animation-name: a4;
-        animation-duration: 1s;
-        animation-iteration-count: 3;
-        animation-delay: 1s;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-
-    .light3On {
-        fill: white;
-        animation-name: a4;
-        animation-duration: 1s;
-        animation-iteration-count: 3;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-
-    .light4On {
-        fill: white;
-        animation-name: a4;
-      
-        animation-duration: 1s;
-        animation-iteration-count: 3;
-        animation-delay: 3s;
-        animation-fill-mode: forwards;
-        animation-play-state:running;
-     
-    }
-
+.grid {
+    display: grid;
    
+    grid-template-columns: 1fr;
+    grid-template-rows:50px 50px 100px 100px 100px;
+    grid-template-areas: "g0" "g1" "g2" "g3" "g4" "g5" "g6" "g7" "g8" "g9";
+}
 
-    @keyframes a1 {
-        0% {
-            
-           
-            fill: white;
-        }
-        100% {
-           
-            fill: red;
-        }
+.g0 {
+    grid-area: g0;
+}
+
+.g1 {
+    grid-area: g1;
+}
+
+.g2 {
+    grid-area: g2;
+}
+
+.g3 {
+    grid-area: g3;
+}
+
+.g4 {
+    grid-area: g4;
+}
+
+.g5 {
+    grid-area: g5;
+}
+
+.g6 {
+    grid-area: g6;
+}
+
+.g7 {
+    grid-area: g7;
+}
+
+.g8 {
+    grid-area: g8;
+}
+
+.g9 {
+    grid-area: g9;
+}
+
+.lighthsOff {
+    fill: white;
+}
+
+.lightsAllOff {
+    animation-name: a2;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.lightsAllOn {
+    animation-name: a1;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.lightsAllFlash {
+    animation-name: a3;
+    animation-duration: 1.5s;
+    animation-iteration-count: 15;
+    animation-fill-mode: forwards;
+}
+
+.lightsLeftRight {
+    animation-name: a1,a2;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.light1On {
+    fill: white;
+    animation-name: a4;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
+}
+
+.light2On {
+    fill: white;
+    animation-name: a4;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.light3On {
+    fill: white;
+    animation-name: a4;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.light4On {
+    fill: white;
+    animation-name: a4;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+
+
+@keyframes a1 {
+    0% {
+        fill: white;
     }
 
-    @keyframes a2 {
-        0% {
-            fill: red;
-        }
-
-
-
-        100% {
-            fill: white;
-        }
-    }
-
-    @keyframes a3 {
-        0% {
-            fill: white;
-        }
-      
-        100% {
-            fill: red;
-        }
-    }
-
-    @keyframes a4 {
-        0% {
-            fill: red;
-        }
-
-        100% {
-            fill: white;
-        }
+    100% {
+        fill: red;
     }
 }
+
+@keyframes a2 {
+    0% {
+        fill: red;
+    }
+
+
+
+    100% {
+        fill: white;
+    }
+}
+
+@keyframes a3 {
+    0% {
+        fill: white;
+    }
+
+    100% {
+        fill: red;
+    }
+}
+
+@keyframes a4 {
+    0% {
+        fill: red;
+    }
+
+    100% {
+        fill: white;
+    }
+}
+

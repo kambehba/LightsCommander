@@ -11,7 +11,7 @@
 
 <div class="grid">
 
-    <div class="g1">Welcome to Kam's Lights Commander</div>
+    <div class="g0">PARSEN SOFTWARE SOLUTIONS</div>
     <div class="g2">Select Pattern: </div>
     <div class="g3">
         <select @bind="SelectedCommand">
@@ -37,7 +37,7 @@
 
     <div class="g7">
         <svg height="100" width="100">
-            <circle id="d2" class="@Lights_css_2" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+            <circle id="d2" class="@Lights_css_2" cx="50" cy="50" r="40" stroke="red" stroke-width="3" /> 
         </svg>
     </div>
 
@@ -120,7 +120,7 @@
         if (SelectedCommand.Equals(CommandTypes.LEFT_RIGHT.ToString())) { ALLOff(); RunLeftRight(); dothis(4);}
         if (SelectedCommand.Equals(CommandTypes.RIGHT_LEFT.ToString())) { ALLOff();  RunRightLeft();dothis(5); }
 
-        //var firebase = new FirebaseClient(“https://dinosaur-facts.firebaseio.com/");
+        
 
     }
 
