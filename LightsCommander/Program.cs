@@ -24,5 +24,7 @@ namespace LightsCommander
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
 }

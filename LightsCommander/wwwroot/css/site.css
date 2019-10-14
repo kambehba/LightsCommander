@@ -198,6 +198,11 @@ app {
         background-color: #3e8e41;
     }
 
+    .b1{
+        background-color:red;
+        width:250px;
+    }
+
     .grid {
         display: grid;
         background-color:aqua;
