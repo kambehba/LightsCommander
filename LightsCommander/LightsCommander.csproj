@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\img\icon-192x192.png" />
-    <Content Remove="wwwroot\img\icon-512x512.png" />
+    <Content Remove="wwwroot\img\logo1.png" />
+    <Content Remove="wwwroot\img\logo2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,8 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="wwwroot\img\icon-192x192.png" />
-    <Resource Include="wwwroot\img\icon-512x512.png" />
+    <Resource Include="wwwroot\img\logo1.png" />
+    <Resource Include="wwwroot\img\logo2.png" />
   </ItemGroup>
 
 </Project>

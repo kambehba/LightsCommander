@@ -11,8 +11,9 @@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json">
+    <link rel='manifest' href='/manifest.webmanifest.json'>
     <link rel="script" href="serviceworker.js">
+    <link rel="apple-touch-icon" sizes="192x192" href="~/img/logo2.png" />
 </head>
 <body>
     <app>
@@ -21,16 +22,26 @@
 
     <script src="_framework/blazor.server.js"></script>
 
+  
+
     <script>
-        if ('serviceWorker' in navigator) {
-            console.log('Registering service worker now');
-            navigator.serviceWorker.register('/serviceworker.js')
-                .then(function () {
-                    console.log('Service Worker Registered');
-                });
-        }
+        if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("[PWA Builder] active service worker found, no need to register");
+         } else {
+        // Register the service worker
+    navigator.serviceWorker
+      .register("pwabuilder-sw.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+      });
+  }
+}
     </script>
 
+ 
 </body>
 </html>
 

@@ -3,6 +3,7 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #4a6abd;
+    margin:0;
 }
 
 a, .btn-link {
@@ -215,21 +216,23 @@ app {
 
 .grid {
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px;
-    grid-template-rows: 50px 50px 50px 50px 50px;
-    grid-template-areas: "g0 g0 g0 g0 g0 g0" "g1 g1 g1 g1 g1 g1" ". . . . . ." "g2 g2 g2 g2 g2 g2" "g3 g4 g5 g5 g5 g5" "g6 g7 g8 g9 . .";
+    grid-template-columns: 5px 70px 70px 70px 70px 70px;
+    grid-template-rows: 50px 50px 50px 50px 30px 50px;
+    grid-template-areas: "g0 g0 g0 g0 g0 g0" "g1 g1 g1 g1 g1 g1" ". . . . . ." "g2 g2 g2 g2 g2 g2" "g3 g3 g3 . . ." "g4 g4 g4 g5 g5 g5" ". g6 g7 g8 g9 .";
 }
 
 .g0 {
     grid-area: g0;
     text-decoration-style:solid;
     color:aliceblue;
+   
 }
 
 .g1 {
     grid-area: g1;
     text-decoration-style: solid;
     color: aliceblue;
+   
 }
 
 .g2 {
