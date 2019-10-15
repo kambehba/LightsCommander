@@ -11,45 +11,44 @@
 
 <div class="grid">
 
-    <div class="g0">PARSEN SOFTWARE SOLUTIONS</div>
-    <div class="g2">Select Pattern: </div>
-    <div class="g3">
+    <h1 class="g0">PARSEN SOFTWARE</h1>
+    <h1 class="g1">SOLUTIONS.</h1>
+    <h3 class="g2">  Lights Commander</h3>
+    <div class="g3">Commands: </div>
+    <div class="g4">
         <select @bind="SelectedCommand">
             @foreach (var command in commands)
             {
-                <option value="@command">@command</option>
+            <option class="d1" value="@command">@command</option>
             }
         </select>
     </div>
 
-    <div class="g4">
-        <button class="b1" @onclick="SendLightCommand">Send2</button>
+    <div class="g5">
+        <button class="b1" @onclick="SendLightCommand">SEND</button>
     </div>
 
-    
-
     <div class="g6">
-
-        <svg height="100" width="100">
-            <circle id="d1" class="@Lights_css_1" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        <svg height="50" width="50">
+            <circle id="d1" class="@Lights_css_1" cx="25" cy="25" r="20" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
     <div class="g7">
-        <svg height="100" width="100">
-            <circle id="d2" class="@Lights_css_2" cx="50" cy="50" r="40" stroke="red" stroke-width="3" /> 
+        <svg height="50" width="50">
+            <circle id="d2" class="@Lights_css_2" cx="25" cy="25" r="20" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
     <div class="g8">
-        <svg height="100" width="100">
-            <circle id="d3" class="@Lights_css_3" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        <svg height="50" width="50">
+            <circle id="d3" class="@Lights_css_3" cx="25" cy="25" r="20" stroke="red" stroke-width="3" />
         </svg>
     </div>
 
     <div class="g9">
-        <svg height="100" width="100">
-            <circle id="d4" class="@Lights_css_4" cx="50" cy="50" r="40" stroke="red" stroke-width="3" />
+        <svg height="50" width="50">
+            <circle id="d4" class="@Lights_css_4" cx="25" cy="25" r="20" stroke="red" stroke-width="3" />
         </svg>
     </div>
 </div>
