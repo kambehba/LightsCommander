@@ -40,7 +40,8 @@ void setup() {
   }
 
   WiFi.mode(WIFI_STA);
-  WiFiMulti.addAP("Rustin", "k8084164");
+  //WiFiMulti.addAP("Rustin", "k8084164");
+  WiFiMulti.addAP("iPhone", "k8084164");
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   
@@ -59,7 +60,10 @@ void loop() {
 Serial.printf("mmm");
    
     Serial.println(Firebase.getFloat("/LightsCommander/commandId"));
-   if(Firebase.getFloat("/LightsCommander/commandId") == 1) { AllON();  Serial.printf("****************ALLON"); }
+   if(Firebase.getFloat("/LightsCommander/commandId") == 1) { AllON();}
+   if(Firebase.getFloat("/LightsCommander/commandId") == 2) { AllOFF();}
+   
+   if(Firebase.getFloat("/LightsCommander/commandId") == 3) { FLASHALL();}
 
   
 }
@@ -87,9 +91,9 @@ void FLASHALL()
   for(int i=0;i<5;i++)
   {
     AllON();
-    delay(2000);
+    delay(400);
     AllOFF();
-    delay(1000);
+    delay(300);
   }
 }
 
