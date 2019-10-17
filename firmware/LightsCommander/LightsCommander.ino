@@ -40,8 +40,8 @@ void setup() {
   }
 
   WiFi.mode(WIFI_STA);
-  //WiFiMulti.addAP("Rustin", "k8084164");
-  WiFiMulti.addAP("iPhone", "k8084164");
+  WiFiMulti.addAP("Rustin", "k8084164");
+  //WiFiMulti.addAP("iPhone", "k8084164");
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   
@@ -91,7 +91,7 @@ void FLASHALL()
   for(int i=0;i<5;i++)
   {
     AllON();
-    delay(400);
+    delay(300);
     AllOFF();
     delay(300);
   }
